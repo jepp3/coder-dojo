@@ -24,17 +24,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
+ 
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -43,6 +33,7 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+      background-color: #E7F6FD;
 }
 
 /* Portrait layout (default) */
@@ -112,4 +103,106 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+
+.CSSTableGenerator {
+    margin:0px;padding:0px;
+    width:100%;
+    border:1px solid #6dc47c;
+    
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+    width:100%;
+    height:100%;
+    margin:0px;padding:0px;
+}
+.CSSTableGenerator tr:nth-child(odd){ background-color:#c7ead7; }
+.CSSTableGenerator tr:nth-child(even)    { background-color:#ffffff; }.CSSTableGenerator td{
+    vertical-align:middle;
+    border:1px solid #6dc47c;
+    border-width:0px 1px 1px 0px;
+    text-align:left;
+    padding:12px;
+    font-size:11px;
+    font-family:Verdana;
+    font-weight:bold;
+    color:#191717;
+}.CSSTableGenerator tr:last-child td{
+    border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+    border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+    border-width:0px 0px 0px 0px;
+}
+
+
+.m-btn.red {
+  color: white;
+  text-shadow: none;
+  background-color: #d84a38;
+  background-image: -moz-linear-gradient(top,#dd4b39,#d14836);
+  background-image: -ms-linear-gradient(top,#dd4b39,#d14836);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#dd4b39),to(#d14836));
+  background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);
+  background-image: -o-linear-gradient(top,#dd4b39,#d14836);
+  background-image: linear-gradient(top,#dd4b39,#d14836);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dd4b39',endColorstr='#d14836',GradientType=0);
+}
+.m-btn.green {
+  color: white;
+  text-shadow: none;
+  background-color: #35aa47;
+  background-image: -moz-linear-gradient(top,#35aa47,#35aa47);
+  background-image: -ms-linear-gradient(top,#35aa47,#35aa47);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#35aa47),to(#35aa47));
+  background-image: -webkit-linear-gradient(top,#35aa47,#35aa47);
+  background-image: -o-linear-gradient(top,#35aa47,#35aa47);
+  background-image: linear-gradient(top,#35aa47,#35aa47);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#35aa47',endColorstr='#35aa47',GradientType=0);
+}
+
+.m-btn {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+  margin: 0;
+  padding: 10px 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  background-color: #eee;
+  background-image: -moz-linear-gradient(top,#eee,#eee);
+  background-image: -ms-linear-gradient(top,#eee,#eee);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#eee),to(#eee));
+  background-image: -webkit-linear-gradient(top,#eee,#eee);
+  background-image: -o-linear-gradient(top,#eee,#eee);
+  background-image: linear-gradient(top,#eee,#eee);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee',endColorstr='#eeeeee',GradientType=0);
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding;
+  zoom: 1;
+  z-index: 1;
+  font-family: "Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  color: #333;
+  min-width: 42px;
+  text-shadow: #fff 0 1px 0;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: inherit;
+}
+
+.wrapper {
+    margin-bottom: 20px;
+    text-align: center;
+
 }

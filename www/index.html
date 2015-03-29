@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Zombie Apocalypse To-Do List</title>
+        <title>To-Do List</title>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
         <script type="text/javascript" language="JavaScript">
 
@@ -10,21 +10,34 @@
 
             /** ska implementeras */
             function createNewToDo() {
-                // prompt the user to enter to-do
-                var todoText = prompt("To-Do","");
-                if(todoText === null) {
-                    return;
-                }
+                // create a prompt that gives one input filed and the title To-Do
+                // skapa en dialog med ett tomt fält och en rubrik där det står "To-Do";
 
-                if (todoText == "") {
-                    alert("To-Do can't be empty!");
-                }
-                else {   
-                    var newTodo = new ToDo(todoText);
-                    todoArray.push(newTodo);
-                    renderTableOfTodos();
-                } 
+                // fortsätt endast om användaren trykte ok och att användaren skrev något i fältet.
+
+                // skapa en ToDo och rendera tabellen med todos åter igen
+
+                // koden nedan är endast demo
+                var todo = new ToDo("hejsan" + todoArray.length);
+                todoArray.push(todo);
+                renderTableOfTodos();
+
             }
+
+               /**Ska implementeras*/
+            function viewSelectedRow(todo) {
+                // skapa en alert och skicka med texten som finns i todo:n.
+            }
+
+               // delete the selected row
+            function deleteTodo(todo) {
+                // ta bort alla todos i arrayen vars namn överensstämmer med todon som man klickat på.
+
+                // rendera den nya tabellen
+
+                // spara undan listan
+            }
+
 
             function onStart() {
                 loadToDoList();
@@ -39,20 +52,9 @@
                 saveToDoList();
             }
 
-            // view the content of the selected row
-            function viewSelectedRow(todoTextField) {
-                alert(todoTextField.value);
-            }
+         
 
-            // delete the selected row
-            function deleteTodo(todo) {
-                todoArray = todoArray.filter(function(td){
-                    return todo.getText() !== td.getText();
-                });
-                renderTableOfTodos();
-                saveToDoList();
-            }
-
+         
             // remove completed tasks
             function removeCompletedTasks() {
                 todoArray = todoArray.filter(function(td){
@@ -107,9 +109,7 @@
             }
 
               // add a row to the table
-            var rowID = 0;
             function addTableRow(todo, appIsLoading) {
-                rowID +=1;
                 var table = document.getElementById("dataTable");
                 var rowCount = table.rows.length;
                 var row = table.insertRow(rowCount);
@@ -131,7 +131,6 @@
                 element2.type = "text";
                 element2.name = "txtbox[]";
                 element2.size = 16;
-                element2.id = "text" + rowID;
                 element2.value = todo.getText();
                 element2.setAttribute("onchange", "saveToDoList()");
                 cell2.appendChild(element2);
@@ -146,9 +145,10 @@
                 var cell3 = row.insertCell(2);
                 var element3 = document.createElement("input");
                 element3.type = "button";
-                element3.id = rowID;
                 element3.value = "View";
-                element3.setAttribute("onclick", "viewSelectedRow(document.getElementById('text' + this.id))");
+                element3.onclick = function() {
+                    viewSelectedRow(todo);
+                };
                 cell3.appendChild(element3);
              
                 // create the delete button
@@ -185,10 +185,11 @@
         </script>
     </head>
     <body onload="onStart()">
-        <input type="button" value="Add To-Do" onclick="createNewToDo()"/>
-        <input type="button" value="Remove Completed Tasks" onclick="removeCompletedTasks()"/>
-        <br/><br/>
-        <table id="dataTable" width="100%" border="1">
+        <div class="wrapper">
+            <a><input class="m-btn green" type="button" value="Add To-Do" onclick="createNewToDo()"/></a>
+            <a><input  class="m-btn red" type="button" value="Remove Completed Tasks" onclick="removeCompletedTasks()"/></a>
+        </div>
+        <table id="dataTable" class="CSSTableGenerator"  cellspacing="0" cellpadding="0" width="100%" border="1">
 
         </table>
     </body>
