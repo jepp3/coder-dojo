@@ -26,8 +26,6 @@
                 } 
             }
 
-            
-
             function onStart() {
                 loadToDoList();
                 renderTableOfTodos(todoArray);
@@ -36,6 +34,7 @@
 
             // add the strike-through styling to completed tasks
             function checkboxClicked(todo,checkbox) {
+                todo.setChecked(checkbox.checked);
                 renderTableOfTodos();
                 saveToDoList();
             }
@@ -76,12 +75,13 @@
 
             function loadToDoList() {
                 var theList = JSON.parse(window.localStorage.getItem("todoList"));
-                console.log(theList);
-                theList.forEach(function(raw) {
-                    var todo = new ToDo(raw.text);
-                    todo.setChecked(raw.checked);
-                    todoArray.push(todo);
-                });
+                if(theList) {
+                    theList.forEach(function(raw) {
+                        var todo = new ToDo(raw.text);
+                        todo.setChecked(raw.checked);
+                        todoArray.push(todo);
+                    });
+                }
             }
 
             // save the to-do list
